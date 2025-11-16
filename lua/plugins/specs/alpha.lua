@@ -10,6 +10,17 @@ return {
     -- available: devicons, mini, default is mini
     -- if provider not loaded and enabled is true, it will try to use another provider
     startify.file_icons.provider = 'devicons'
+    startify.section.header.val = {
+      '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+      '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+      '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+      '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+      '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+      '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+      '',
+      '                      MMedina-Tech',
+    }
+    startify.section.header.opts.hl = 'Function'
     require('alpha').setup(startify.config)
   end,
 }

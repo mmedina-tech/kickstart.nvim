@@ -10,6 +10,14 @@ A starting point for Neovim that is:
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
+## Theme-aware workflow
+
+- Theme choices live in `lua/config/theme.lua`. Each entry describes the curated dark palette and any quirks (contrast, integrations, etc.), so adding another scheme is just another table item.
+- On startup the theme manager restores the last theme from `stdpath('state')/theme.json`. When no theme was saved yet it inspects the desktop configuration (GTK settings, `gsettings`, KDE globals, or `$GTK_THEME`) and still selects the preferred dark default.
+- `:ThemePicker` (or `<leader>up`) shows the expanded dark-only catalog inside Telescope with live previews. If Telescope is not available it falls back to `vim.ui.select`, so you can always audition a palette.
+- `:ThemeToggle` (`<leader>ut`) now cycles forward through the curated list, while `:ThemeSync` (`<leader>us`) re-runs system detection and reapplies the closest dark match.
+- Every time a colorscheme is applied it is persisted. That means manual `:colorscheme foo` commands are remembered too, so the next Neovim launch resumes the same look automatically.
+
 ## Installation
 
 ### Install Neovim
@@ -237,4 +245,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-

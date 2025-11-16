@@ -1,28 +1,76 @@
 return {
   {
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      --@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = true }, -- Enable italics in comments
-        },
-      }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
-    end,
+    lazy = false,
+    priority = 1000,
   },
-  -- Lazy
   {
     'olimorris/onedarkpro.nvim',
-    priority = 1000, -- Ensure it loads first
-    config = function()
-      -- somewhere in your config:
-      vim.cmd.colorscheme 'onedark_dark'
-    end,
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'Mofiqul/dracula.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'neanias/everforest-nvim',
+    name = 'everforest',
+    branch = 'main',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'loctvl842/monokai-pro.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'marko-cerovac/material.nvim',
+    lazy = false,
+    priority = 1000,
   },
 }

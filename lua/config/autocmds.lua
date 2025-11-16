@@ -8,3 +8,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+local theme_group = vim.api.nvim_create_augroup('config-theme', { clear = true })
+
+vim.api.nvim_create_autocmd('User', {
+  group = theme_group,
+  pattern = 'LazyDone',
+  desc = 'Apply the configured theme after plugins load',
+  callback = function()
+    require('config.theme').setup()
+  end,
+})
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  group = theme_group,
+  desc = 'Persist theme changes',
+  callback = function(event)
+    require('config.theme').handle_colorscheme(event.match)
+  end,
+})
